@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\UI\Popup\UI_Popup.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\Poolable.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\DataManager.cs" />
+    <Compile Include="Assets\Scripts\Controllers\CreatureController.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\ResourceManager.cs" />
@@ -77,7 +78,7 @@
     <Compile Include="Assets\Scripts\Managers\Managers.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\MonsterController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\CreatureController.cs" />
+    <Compile Include="Assets\Scripts\Managers\Contents\ObjectManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Resources\Map\Map_001.txt" />
