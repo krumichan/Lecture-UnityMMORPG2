@@ -15,11 +15,11 @@ C:/developer/unityws/lecture/unity/Lecture-UnityMMORPG2/Client
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-14479
+11285
 Successfully changed project path to: C:/developer/unityws/lecture/unity/Lecture-UnityMMORPG2/Client
 C:/developer/unityws/lecture/unity/Lecture-UnityMMORPG2/Client
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 69.72 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 59.59 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.4f1 (0abb6314276a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -35,356 +35,269 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56028
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003840 seconds.
+Registered in 0.005415 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 65.99 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 69.85 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.215 seconds
+- Completed reload, in  2.238 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001431 seconds.
+Registered in 0.001824 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 83.26 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 60.13 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.951 seconds
+- Completed reload, in  1.739 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
-Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1828 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 85.4 MB.
+System memory in use before: 85.3 MB.
 System memory in use after: 85.3 MB.
 
 Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2271.
-Total: 2.269500 ms (FindLiveObjects: 0.240100 ms CreateObjectMapping: 0.076200 ms MarkObjects: 1.808900 ms  DeleteObjects: 0.142800 ms)
+Total: 4.244900 ms (FindLiveObjects: 0.200800 ms CreateObjectMapping: 0.067800 ms MarkObjects: 3.659200 ms  DeleteObjects: 0.315700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Resources/Animations/Player
-  artifactKey: Guid(f7f0764aaf5f3a64c8b4edbe09900182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player using Guid(f7f0764aaf5f3a64c8b4edbe09900182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a668956c27de492451846d09dd5269cd') in 0.008026 seconds
-  Import took 0.015818 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.530924 seconds.
   path: Assets/Resources/Animations/Player/PlayerAnimController.controller
   artifactKey: Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/PlayerAnimController.controller using Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a7ac3b0a7707fc9d8ae4201ff5835a') in 0.060499 seconds
-  Import took 0.067564 seconds .
+Start importing Assets/Resources/Animations/Player/PlayerAnimController.controller using Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60ec4bcca2dfe006542a7f6e2a15e83f') in 0.063968 seconds
+  Import took 0.073525 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 72.511362 seconds.
-  path: Assets/Resources/Animations/Player/WALK_RIGHT.anim
-  artifactKey: Guid(17ec4c95e2d60a34c9df8f319917204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/WALK_RIGHT.anim using Guid(17ec4c95e2d60a34c9df8f319917204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2da3728cef26cc9488471a2df6a8eed') in 0.007981 seconds
-  Import took 0.013654 seconds .
+  Time since last request: 43.200272 seconds.
+  path: Assets/Scripts/Managers/Contents
+  artifactKey: Guid(5870dcb66f20c634385f3fc90ffbefc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Contents using Guid(5870dcb66f20c634385f3fc90ffbefc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7767e8bf0814e0d6e14eff54cbc130e5') in 0.004346 seconds
+  Import took 0.010386 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.006313 seconds.
-  path: Assets/Resources/Animations/Player/WALK_RIGHT.anim
-  artifactKey: Guid(17ec4c95e2d60a34c9df8f319917204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/WALK_RIGHT.anim using Guid(17ec4c95e2d60a34c9df8f319917204f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2da3728cef26cc9488471a2df6a8eed') in 0.003816 seconds
-  Import took 0.010151 seconds .
+  Time since last request: 0.001643 seconds.
+  path: Assets/Scripts/Managers/Contents
+  artifactKey: Guid(5870dcb66f20c634385f3fc90ffbefc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Contents using Guid(5870dcb66f20c634385f3fc90ffbefc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7767e8bf0814e0d6e14eff54cbc130e5') in 0.003073 seconds
+  Import took 0.009326 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.403798 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-2.png
-  artifactKey: Guid(becb8a6873c144b738fc9cc5fceece35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-2.png using Guid(becb8a6873c144b738fc9cc5fceece35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9086b2981b87175c46079f1b6071d621') in 0.118427 seconds
-  Import took 0.125020 seconds .
+  Time since last request: 5.579468 seconds.
+  path: Assets/Scripts/Managers/Managers.cs
+  artifactKey: Guid(0870a5778dd2d1e4bb43ac895af73f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Managers.cs using Guid(0870a5778dd2d1e4bb43ac895af73f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10385f9597dc8a3c9acddae1c8783063') in 0.007673 seconds
+  Import took 0.013903 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000626 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png
-  artifactKey: Guid(280d5eb6ec4ee40a3922d520ee42863d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-6.png using Guid(280d5eb6ec4ee40a3922d520ee42863d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82f0e43002334804a79281bfdfe2e703') in 0.012076 seconds
-  Import took 0.018263 seconds .
+  Time since last request: 0.149166 seconds.
+  path: Assets/Scripts/Managers/Managers.cs
+  artifactKey: Guid(0870a5778dd2d1e4bb43ac895af73f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Managers.cs using Guid(0870a5778dd2d1e4bb43ac895af73f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10385f9597dc8a3c9acddae1c8783063') in 0.003703 seconds
+  Import took 0.009553 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000589 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-2.png
-  artifactKey: Guid(becb8a6873c144b738fc9cc5fceece35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-2.png using Guid(becb8a6873c144b738fc9cc5fceece35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9086b2981b87175c46079f1b6071d621') in 0.018586 seconds
-  Import took 0.026441 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000649 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-5.png
-  artifactKey: Guid(b770b77e5762c4d3491a467ece3ee7e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-5.png using Guid(b770b77e5762c4d3491a467ece3ee7e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c0a28ae39d2f63ad366061da98ca793') in 0.011069 seconds
-  Import took 0.019494 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000629 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png
-  artifactKey: Guid(82de06744ccd74b2cb215461eafffad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png using Guid(82de06744ccd74b2cb215461eafffad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99f88d4563773333e0dd371ccb7e6d4') in 0.015441 seconds
-  Import took 0.022744 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000537 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-3.png
-  artifactKey: Guid(a274e989dc8e043a1b30c36987c3ecb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-3.png using Guid(a274e989dc8e043a1b30c36987c3ecb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c03d710eff41d07d94efdcd12013a811') in 0.016076 seconds
-  Import took 0.022666 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.030056 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png
-  artifactKey: Guid(82de06744ccd74b2cb215461eafffad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-side/hero-walk-side-4.png using Guid(82de06744ccd74b2cb215461eafffad7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99f88d4563773333e0dd371ccb7e6d4') in 0.011688 seconds
-  Import took 0.018728 seconds .
+  Time since last request: 22.298020 seconds.
+  path: Assets/Scripts/Managers/Contents/MapManager.cs
+  artifactKey: Guid(386a2770413e1fe41be23a25d16dd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Contents/MapManager.cs using Guid(386a2770413e1fe41be23a25d16dd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c05f382e9e2570919b5b11ef62d794c') in 0.398630 seconds
+  Import took 0.407141 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002662 seconds.
+Registered in 0.010413 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.655 seconds
+- Completed reload, in  2.371 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.16 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.4 MB.
-System memory in use after: 88.4 MB.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.3 MB.
+System memory in use after: 85.3 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2281.
-Total: 2.902700 ms (FindLiveObjects: 0.305000 ms CreateObjectMapping: 0.129600 ms MarkObjects: 2.313800 ms  DeleteObjects: 0.152600 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2276.
+Total: 4.580800 ms (FindLiveObjects: 0.496700 ms CreateObjectMapping: 0.189900 ms MarkObjects: 3.713800 ms  DeleteObjects: 0.177500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001478 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.263 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.4 MB.
+System memory in use after: 85.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2280.
+Total: 3.099400 ms (FindLiveObjects: 0.338700 ms CreateObjectMapping: 0.106800 ms MarkObjects: 2.521100 ms  DeleteObjects: 0.131500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 59.560089 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-5.png
-  artifactKey: Guid(b6e0510b98b514e078dd461313dcd347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-5.png using Guid(b6e0510b98b514e078dd461313dcd347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '341797a9315679f36741cde715ac9a3c') in 0.087319 seconds
-  Import took 0.097734 seconds .
+  Time since last request: 228.101035 seconds.
+  path: Assets/Scripts/Managers/Contents/MapManager.cs
+  artifactKey: Guid(386a2770413e1fe41be23a25d16dd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Managers/Contents/MapManager.cs using Guid(386a2770413e1fe41be23a25d16dd6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5fa060860b5abc2f23e05477bcf745f') in 0.006478 seconds
+  Import took 0.013055 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.627281 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-6.png
-  artifactKey: Guid(89a9ed82b75b24c1492b3fd640424573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-6.png using Guid(89a9ed82b75b24c1492b3fd640424573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c501a65c95915aa66a335edfdddb0e') in 0.015415 seconds
-  Import took 0.023221 seconds .
+  Time since last request: 5.811184 seconds.
+  path: Assets/Resources/Prefabs/Map/Map_001.prefab
+  artifactKey: Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Map/Map_001.prefab using Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02883051da9cad7a946ca8e5b17282bd') in 0.036042 seconds
+  Import took 0.043732 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001565 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.248 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.4 MB.
+System memory in use after: 85.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2284.
+Total: 2.653800 ms (FindLiveObjects: 0.219700 ms CreateObjectMapping: 0.072700 ms MarkObjects: 2.192500 ms  DeleteObjects: 0.167600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.008391 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-6.png
-  artifactKey: Guid(89a9ed82b75b24c1492b3fd640424573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/walk/hero-walk-back/hero-walk-back-6.png using Guid(89a9ed82b75b24c1492b3fd640424573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c501a65c95915aa66a335edfdddb0e') in 0.018803 seconds
-  Import took 0.029773 seconds .
+  Time since last request: 125.226623 seconds.
+  path: Assets/Scripts/Scenes/GameScene.cs
+  artifactKey: Guid(5e5a2a4ab56bf724faae15359b0ee526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Scenes/GameScene.cs using Guid(5e5a2a4ab56bf724faae15359b0ee526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a644f86a6f9ad08e04edad79d909e92') in 0.010049 seconds
+  Import took 0.017150 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002534 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.541 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.4 MB.
+System memory in use after: 85.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2288.
+Total: 2.847200 ms (FindLiveObjects: 0.232700 ms CreateObjectMapping: 0.068100 ms MarkObjects: 2.394700 ms  DeleteObjects: 0.149700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.627858 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-3.png
-  artifactKey: Guid(94f37dc86c80b4bbcb69aa5196138416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-3.png using Guid(94f37dc86c80b4bbcb69aa5196138416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a872e2e968ed5f5c698a4a117469297') in 0.010374 seconds
-  Import took 0.017513 seconds .
+  Time since last request: 89.875910 seconds.
+  path: Assets/Scripts/Scenes/GameScene.cs
+  artifactKey: Guid(5e5a2a4ab56bf724faae15359b0ee526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Scenes/GameScene.cs using Guid(5e5a2a4ab56bf724faae15359b0ee526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '793bc5235a056eb153c79b730addfa26') in 0.007472 seconds
+  Import took 0.013484 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002573 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.617 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2292.
+Total: 3.391300 ms (FindLiveObjects: 0.310800 ms CreateObjectMapping: 0.231200 ms MarkObjects: 2.585800 ms  DeleteObjects: 0.261400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.306908 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-1.png
-  artifactKey: Guid(06aae4ddb038e4d5db20cbfa9674d4ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-1.png using Guid(06aae4ddb038e4d5db20cbfa9674d4ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905585fa3c95161102d83aada4554039') in 0.012189 seconds
-  Import took 0.018988 seconds .
+  Time since last request: 52.390446 seconds.
+  path: Assets/Editor/MapEditor.cs
+  artifactKey: Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor/MapEditor.cs using Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92b37b8792d1be7dde8969b734203d19') in 0.007006 seconds
+  Import took 0.013742 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.679484 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-1.png
-  artifactKey: Guid(06aae4ddb038e4d5db20cbfa9674d4ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-side/hero-attack-side-weapon-1.png using Guid(06aae4ddb038e4d5db20cbfa9674d4ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5826e4be5652fbbdae1431613a3aebe7') in 0.012860 seconds
-  Import took 0.019192 seconds .
+  Time since last request: 0.002938 seconds.
+  path: Assets/Editor/MapEditor.cs
+  artifactKey: Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor/MapEditor.cs using Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92b37b8792d1be7dde8969b734203d19') in 0.004065 seconds
+  Import took 0.010711 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002563 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.625 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2296.
+Total: 2.281100 ms (FindLiveObjects: 0.171000 ms CreateObjectMapping: 0.065200 ms MarkObjects: 1.861300 ms  DeleteObjects: 0.182500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.689301 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-front/hero-attack-front-weapon-1.png
-  artifactKey: Guid(d3fc86e87ed624cd4b99f41839d07872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-front/hero-attack-front-weapon-1.png using Guid(d3fc86e87ed624cd4b99f41839d07872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '575af449a847d4871869bf860edf5b70') in 0.013178 seconds
-  Import took 0.020742 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.750883 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-front/hero-attack-front-weapon-1.png
-  artifactKey: Guid(d3fc86e87ed624cd4b99f41839d07872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-front/hero-attack-front-weapon-1.png using Guid(d3fc86e87ed624cd4b99f41839d07872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79abcfba6db9cd5b06c0bf771ac04e26') in 0.010929 seconds
-  Import took 0.016947 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.500215 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-3.png
-  artifactKey: Guid(afa49c1c777bc41729512b54c7cffb6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-3.png using Guid(afa49c1c777bc41729512b54c7cffb6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '765e540d7c309e654d40f8fa4a8ce997') in 0.013208 seconds
-  Import took 0.019519 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005368 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-3.png
-  artifactKey: Guid(afa49c1c777bc41729512b54c7cffb6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-3.png using Guid(afa49c1c777bc41729512b54c7cffb6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '765e540d7c309e654d40f8fa4a8ce997') in 0.010103 seconds
-  Import took 0.015947 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.246156 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-1.png
-  artifactKey: Guid(ffed433e735f44a99b90ef2bcb4119c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-1.png using Guid(ffed433e735f44a99b90ef2bcb4119c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5f02533c073f3593ab503dc1909457') in 0.010538 seconds
-  Import took 0.016870 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.008613 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-1.png
-  artifactKey: Guid(ffed433e735f44a99b90ef2bcb4119c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack-weapon/hero-attack-back/hero-attack-back-weapon-1.png using Guid(ffed433e735f44a99b90ef2bcb4119c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4ab69ba93b66890341ea61acc39633') in 0.040403 seconds
-  Import took 0.107386 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.231954 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-3.png
-  artifactKey: Guid(afcfb31c2e79f4edcacff6d2ae846b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-3.png using Guid(afcfb31c2e79f4edcacff6d2ae846b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6827875d83cb25db812d8b3c94be7950') in 0.016010 seconds
-  Import took 0.025313 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.304001 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-1.png
-  artifactKey: Guid(ba299c80d09de4d4696f394e503ac933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-1.png using Guid(ba299c80d09de4d4696f394e503ac933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ca3ea967f35eb5ce2d3f719cea251eb') in 0.014327 seconds
-  Import took 0.023480 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.264639 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-1.png
-  artifactKey: Guid(ba299c80d09de4d4696f394e503ac933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-side/hero-attack-side-1.png using Guid(ba299c80d09de4d4696f394e503ac933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7370e6cf76e5d8174e125d7bfcfe87b') in 0.014526 seconds
-  Import took 0.020639 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.610377 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-front/hero-attack-front-1.png
-  artifactKey: Guid(3fee1b456a31145079dfa677bd981ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-front/hero-attack-front-1.png using Guid(3fee1b456a31145079dfa677bd981ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5a887264b67c642876b58dacbb76e2a') in 0.015381 seconds
-  Import took 0.026347 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.794932 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-front/hero-attack-front-1.png
-  artifactKey: Guid(3fee1b456a31145079dfa677bd981ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-front/hero-attack-front-1.png using Guid(3fee1b456a31145079dfa677bd981ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '023e869816524f5dc31557a64cf382a3') in 0.010354 seconds
-  Import took 0.017972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.177357 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back/hero-attack-back-1.png
-  artifactKey: Guid(269bf255a0807467391905647741fd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back/hero-attack-back-1.png using Guid(269bf255a0807467391905647741fd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd83a75732ce67c0b310841f184e4da68') in 0.010262 seconds
-  Import took 0.016886 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.777288 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back/hero-attack-back-1.png
-  artifactKey: Guid(269bf255a0807467391905647741fd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back/hero-attack-back-1.png using Guid(269bf255a0807467391905647741fd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d550faad94bba091d6f1c30a3a4459') in 0.013027 seconds
-  Import took 0.018677 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.515944 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back
-  artifactKey: Guid(8c9b5162764604426a30aca42ef9115f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/attack/hero-attack-back using Guid(8c9b5162764604426a30aca42ef9115f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb6d43ef38bfbf5f68e3e4c4716c219c') in 0.004616 seconds
-  Import took 0.016029 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.198098 seconds.
-  path: Assets/Resources/Animations/Player/PlayerAnimController.controller
-  artifactKey: Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/PlayerAnimController.controller using Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37372e508c16f4d300a31f61e6b0f7d6') in 0.006307 seconds
-  Import took 0.012810 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003887 seconds.
-  path: Assets/Resources/Animations/Player/PlayerAnimController.controller
-  artifactKey: Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/PlayerAnimController.controller using Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37372e508c16f4d300a31f61e6b0f7d6') in 0.004821 seconds
-  Import took 0.011582 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 97.439017 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-side/hero-idle-side.png
-  artifactKey: Guid(21ae12909dfa64464820da55fc494021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-side/hero-idle-side.png using Guid(21ae12909dfa64464820da55fc494021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '065cdab80209a94cceb9476923244f5b') in 0.011177 seconds
-  Import took 0.017381 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.898455 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-front/hero-idle-front.png
-  artifactKey: Guid(0f39a9205e4394ee1b6ba8269428d176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-front/hero-idle-front.png using Guid(0f39a9205e4394ee1b6ba8269428d176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d37722650dc66cbbf7cf2adfea9300') in 0.011543 seconds
-  Import took 0.018050 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.283770 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-back/hero-idle-back.png
-  artifactKey: Guid(4fc82fadd0e1d4ed8a697be473d72842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-back/hero-idle-back.png using Guid(4fc82fadd0e1d4ed8a697be473d72842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8215dc7dbaa5ed61249959975a2931c0') in 0.010192 seconds
-  Import took 0.016312 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.197861 seconds.
-  path: Assets/Resources/Animations/Player/PlayerAnimController.controller
-  artifactKey: Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Animations/Player/PlayerAnimController.controller using Guid(2d5b3141b5b8b7a47b91a296d00c0b04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b93712826a60bcfad6099c6305ae3541') in 0.014848 seconds
-  Import took 0.024865 seconds .
+  Time since last request: 831.256630 seconds.
+  path: Assets/Editor/MapEditor.cs
+  artifactKey: Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor/MapEditor.cs using Guid(1fc612176b77c5e49bba4e13a4c1b447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66eba52d287535e3b3b29313d245edd0') in 0.011115 seconds
+  Import took 0.017407 seconds .
 
 ========================================================================
 Received Prepare
@@ -393,147 +306,147 @@ Registered in 0.001459 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.326 seconds
+- Completed reload, in  1.287 seconds
 Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2300.
+Total: 2.457400 ms (FindLiveObjects: 0.236200 ms CreateObjectMapping: 0.084600 ms MarkObjects: 1.994800 ms  DeleteObjects: 0.140300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 76.737435 seconds.
+  path: Assets/Resources/Map/Map_001.txt
+  artifactKey: Guid(18f7d6ea26987a840802486af94a4dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Map/Map_001.txt using Guid(18f7d6ea26987a840802486af94a4dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd19ebf86967d8470fcdccc1772f6a00') in 0.031462 seconds
+  Import took 0.038711 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001744 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.5 MB.
-System memory in use after: 88.4 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2286.
-Total: 2.923400 ms (FindLiveObjects: 0.499000 ms CreateObjectMapping: 0.087400 ms MarkObjects: 2.185000 ms  DeleteObjects: 0.150300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002683 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.662 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.5 MB.
-System memory in use after: 88.5 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2290.
-Total: 2.472000 ms (FindLiveObjects: 0.394600 ms CreateObjectMapping: 0.123500 ms MarkObjects: 1.839500 ms  DeleteObjects: 0.112000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 502.370314 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-back/hero-idle-back.png
-  artifactKey: Guid(4fc82fadd0e1d4ed8a697be473d72842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-back/hero-idle-back.png using Guid(4fc82fadd0e1d4ed8a697be473d72842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6987febb9f8e3ff40283d1b729a8edaf') in 0.072902 seconds
-  Import took 0.079035 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.472231 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-front/hero-idle-front.png
-  artifactKey: Guid(0f39a9205e4394ee1b6ba8269428d176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-front/hero-idle-front.png using Guid(0f39a9205e4394ee1b6ba8269428d176) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37126232ac2d8f54c1a994324a9dde6') in 0.013439 seconds
-  Import took 0.020573 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.073484 seconds.
-  path: Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-side/hero-idle-side.png
-  artifactKey: Guid(21ae12909dfa64464820da55fc494021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Tiny RPG Forest/Artwork/sprites/hero/idle/hero-idle-side/hero-idle-side.png using Guid(21ae12909dfa64464820da55fc494021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb0563f10af341c0b07bbad5c21bcb3') in 0.011340 seconds
-  Import took 0.017302 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001597 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.955 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.5 MB.
-System memory in use after: 88.5 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2295.
-Total: 5.382300 ms (FindLiveObjects: 0.394800 ms CreateObjectMapping: 0.346500 ms MarkObjects: 4.434700 ms  DeleteObjects: 0.202900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001826 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.238 seconds
+- Completed reload, in  1.271 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.5 MB.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2299.
-Total: 2.607500 ms (FindLiveObjects: 0.221600 ms CreateObjectMapping: 0.072300 ms MarkObjects: 2.117500 ms  DeleteObjects: 0.194200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002229 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.235 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.5 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2303.
-Total: 4.701200 ms (FindLiveObjects: 0.535700 ms CreateObjectMapping: 0.208600 ms MarkObjects: 3.561000 ms  DeleteObjects: 0.391900 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2304.
+Total: 2.868300 ms (FindLiveObjects: 0.296400 ms CreateObjectMapping: 0.084900 ms MarkObjects: 2.295800 ms  DeleteObjects: 0.189500 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002023 seconds.
+Registered in 0.001491 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.681 seconds
-Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1823 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 88.6 MB.
-System memory in use after: 88.5 MB.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.490 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2307.
-Total: 2.599400 ms (FindLiveObjects: 0.207200 ms CreateObjectMapping: 0.074100 ms MarkObjects: 1.956600 ms  DeleteObjects: 0.360000 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2308.
+Total: 2.979900 ms (FindLiveObjects: 0.297300 ms CreateObjectMapping: 0.141600 ms MarkObjects: 2.199500 ms  DeleteObjects: 0.340300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 664.220444 seconds.
+  path: Assets/Resources/Prefabs/Map/Map_001.prefab
+  artifactKey: Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Map/Map_001.prefab using Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba93fcaa12a3fedf031fa3b7153685f') in 0.034753 seconds
+  Import took 0.040749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003040 seconds.
+  path: Assets/Resources/Prefabs/Map/Map_001.prefab
+  artifactKey: Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Map/Map_001.prefab using Guid(8d197b68478e8dd44b0151c1b68d1b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba93fcaa12a3fedf031fa3b7153685f') in 0.006942 seconds
+  Import took 0.013375 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002767 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.238 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2312.
+Total: 3.567800 ms (FindLiveObjects: 0.494400 ms CreateObjectMapping: 0.328800 ms MarkObjects: 2.615000 ms  DeleteObjects: 0.126600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001519 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.511 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2316.
+Total: 5.413300 ms (FindLiveObjects: 0.527100 ms CreateObjectMapping: 0.319400 ms MarkObjects: 4.316100 ms  DeleteObjects: 0.248000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001565 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.626 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2320.
+Total: 4.628300 ms (FindLiveObjects: 0.386500 ms CreateObjectMapping: 0.187300 ms MarkObjects: 3.844200 ms  DeleteObjects: 0.208100 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
