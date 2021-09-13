@@ -7,7 +7,8 @@ public class CreatureController : MonoBehaviour
 {
     public float _speed = 5.0f;
 
-    protected Vector3Int _cellPos = Vector3Int.zero;
+    public Vector3Int CellPosition { get; set; } = Vector3Int.zero;
+
     protected Animator _animator;
     protected SpriteRenderer _sprite;
 
@@ -125,7 +126,7 @@ public class CreatureController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
-        Vector3 worldPos = Managers.Map.CurrentGrid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
+        Vector3 worldPos = Managers.Map.CurrentGrid.CellToWorld(CellPosition) + new Vector3(0.5f, 0.5f);
         transform.position = worldPos;
     }
 
@@ -142,7 +143,7 @@ public class CreatureController : MonoBehaviour
             return;
         }
 
-        Vector3 destWorldPos = Managers.Map.CurrentGrid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
+        Vector3 destWorldPos = Managers.Map.CurrentGrid.CellToWorld(CellPosition) + new Vector3(0.5f, 0.5f);
         Vector3 moveDir = destWorldPos - transform.position;
 
         // µµÂø ¿©ºÎ
@@ -175,7 +176,7 @@ public class CreatureController : MonoBehaviour
     {
         if (State == CreatureState.Idle && _dir != MoveDir.None)
         {
-            Vector3Int destination = _cellPos;
+            Vector3Int destination = CellPosition;
             switch (_dir)
             {
                 case MoveDir.Up:
@@ -195,10 +196,14 @@ public class CreatureController : MonoBehaviour
                     break;
             }
 
+            State = CreatureState.Moving;
+
             if (Managers.Map.CanMove(destination))
             {
-                _cellPos = destination;
-                State = CreatureState.Moving;
+                if (Managers.Object.Find(destination) == null)
+                {
+                    CellPosition = destination;
+                }
             }
         }
     }

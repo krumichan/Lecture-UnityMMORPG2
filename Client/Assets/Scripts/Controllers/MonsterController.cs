@@ -8,6 +8,11 @@ public class MonsterController : CreatureController
     protected override void Init()
     {
         base.Init();
+
+        // Animator, SpriteRenderer를
+        // 준비해야 하므로, Init() 뒤에 수행.
+        State = CreatureState.Idle;
+        Dir = MoveDir.None;
     }
 
     protected override void UpdateController()
