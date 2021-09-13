@@ -7,7 +7,9 @@ public class Managers : MonoBehaviour
     static Managers s_instance; // 유일성이 보장된다
     static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
-	#region Contents
+    #region Contents
+    MapManager _map = new MapManager();
+    public static MapManager Map { get { return Instance._map; } }
 	#endregion
 
 	#region Core

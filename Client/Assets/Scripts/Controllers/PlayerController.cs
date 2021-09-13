@@ -5,7 +5,6 @@ using static Define;
 
 public class PlayerController : MonoBehaviour
 {
-    public Grid _grid = null;
     public float _speed = 5.0f;
 
     Vector3Int _cellPos = Vector3Int.zero;
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        Vector3 worldPos = _grid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
+        Vector3 worldPos = Managers.Map.CurrentGrid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
         transform.position = worldPos;
     }
 
@@ -90,6 +89,11 @@ public class PlayerController : MonoBehaviour
         GetDirInput();
         UpdatePosition();
         UpdateIsMoving();
+    }
+
+    void LateUpdate()
+    {
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 
     void GetDirInput()
@@ -123,7 +127,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Vector3 destWorldPos = _grid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
+        Vector3 destWorldPos = Managers.Map.CurrentGrid.CellToWorld(_cellPos) + new Vector3(0.5f, 0.5f);
         Vector3 moveDir = destWorldPos - transform.position;
 
         // µµÂø ¿©ºÎ
@@ -142,29 +146,32 @@ public class PlayerController : MonoBehaviour
 
     void UpdateIsMoving()
     {
-        if (_isMoving == false)
+        if (_isMoving == false && _dir != MoveDir.None)
         {
+            Vector3Int destination = _cellPos;
             switch (_dir)
             {
                 case MoveDir.Up:
-                    _cellPos += Vector3Int.up;
-                    _isMoving = true;
+                    destination += Vector3Int.up;
                     break;
 
                 case MoveDir.Down:
-                    _cellPos += Vector3Int.down;
-                    _isMoving = true;
+                    destination += Vector3Int.down;
                     break;
 
                 case MoveDir.Left:
-                    _cellPos += Vector3Int.left;
-                    _isMoving = true;
+                    destination += Vector3Int.left;
                     break;
 
                 case MoveDir.Right:
-                    _cellPos += Vector3Int.right;
-                    _isMoving = true;
+                    destination += Vector3Int.right;
                     break;
+            }
+
+            if (Managers.Map.CanMove(destination))
+            {
+                _cellPos = destination;
+                _isMoving = true;
             }
         }
     }

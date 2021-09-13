@@ -9,6 +9,8 @@ public class GameScene : BaseScene
         base.Init();
 
         SceneType = Define.Scene.Game;
+
+        Managers.Map.LoadMap(1);
         //Managers.UI.ShowSceneUI<UI_Inven>();
         //Dictionary<int, Data.Stat> dict = Managers.Data.StatDict;
         //gameObject.GetOrAddComponent<CursorController>();
