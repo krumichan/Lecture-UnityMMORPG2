@@ -19,7 +19,7 @@ public class GameScene : BaseScene
         for (int i = 0; i < 5; ++i)
         {
             GameObject monster = Managers.Resource.Instantiate("Creature/Monster");
-            player.name = $"Monster_{i}";
+            monster.name = $"Monster_{i}";
 
             Vector3Int position = new Vector3Int()
             {

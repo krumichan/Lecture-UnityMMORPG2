@@ -51,6 +51,32 @@ public class CreatureController : MonoBehaviour
         }
     }
 
+    public Vector3Int GetFrontCellPosition()
+    {
+        Vector3Int cellPosition = CellPosition;
+        
+        switch (_lastDir)
+        {
+            case MoveDir.Up:
+                cellPosition += Vector3Int.up;
+                break;
+
+            case MoveDir.Down:
+                cellPosition += Vector3Int.down;
+                break;
+
+            case MoveDir.Left:
+                cellPosition += Vector3Int.left;
+                break;
+
+            case MoveDir.Right:
+                cellPosition += Vector3Int.right;
+                break;
+        }
+
+        return cellPosition;
+    }
+
     protected virtual void UpdateAnimation()
     {
         if (_state == CreatureState.Idle)
@@ -98,7 +124,24 @@ public class CreatureController : MonoBehaviour
         }
         else if (_state == CreatureState.Skill)
         {
-            // TODO
+            switch (_lastDir)
+            {
+                case MoveDir.Up:
+                    PlayWithFlip("ATTACK_BACK");
+                    break;
+
+                case MoveDir.Down:
+                    PlayWithFlip("ATTACK_FRONT");
+                    break;
+
+                case MoveDir.Left:
+                    PlayWithFlip("ATTACK_RIGHT", true);
+                    break;
+
+                case MoveDir.Right:
+                    PlayWithFlip("ATTACK_RIGHT");
+                    break;
+            }
         }
         else
         {
@@ -132,17 +175,64 @@ public class CreatureController : MonoBehaviour
 
     protected virtual void UpdateController()
     {
-        UpdatePosition();
-        UpdateIsMoving();
+        switch (State)
+        {
+            case CreatureState.Idle:
+                UpdateIdle();
+                break;
+
+            case CreatureState.Moving:
+                UpdateMoving();
+                break;
+
+            case CreatureState.Skill:
+                UpdateSkill();
+                break;
+
+            case CreatureState.Dead:
+                UpdateDead();
+                break;
+        }
     }
 
-    void UpdatePosition()
+    protected virtual void UpdateIdle()
     {
-        if (State != CreatureState.Moving)
+        if (_dir != MoveDir.None)
         {
-            return;
-        }
+            Vector3Int destination = CellPosition;
+            switch (_dir)
+            {
+                case MoveDir.Up:
+                    destination += Vector3Int.up;
+                    break;
 
+                case MoveDir.Down:
+                    destination += Vector3Int.down;
+                    break;
+
+                case MoveDir.Left:
+                    destination += Vector3Int.left;
+                    break;
+
+                case MoveDir.Right:
+                    destination += Vector3Int.right;
+                    break;
+            }
+
+            State = CreatureState.Moving;
+
+            if (Managers.Map.CanMove(destination))
+            {
+                if (Managers.Object.FindCreature(destination) == null)
+                {
+                    CellPosition = destination;
+                }
+            }
+        }
+    }
+
+    protected virtual void UpdateMoving()
+    {
         Vector3 destWorldPos = Managers.Map.CurrentGrid.CellToWorld(CellPosition) + new Vector3(0.5f, 0.5f);
         Vector3 moveDir = destWorldPos - transform.position;
 
@@ -172,39 +262,13 @@ public class CreatureController : MonoBehaviour
         }
     }
 
-    void UpdateIsMoving()
+    protected virtual void UpdateSkill()
     {
-        if (State == CreatureState.Idle && _dir != MoveDir.None)
-        {
-            Vector3Int destination = CellPosition;
-            switch (_dir)
-            {
-                case MoveDir.Up:
-                    destination += Vector3Int.up;
-                    break;
 
-                case MoveDir.Down:
-                    destination += Vector3Int.down;
-                    break;
+    }
 
-                case MoveDir.Left:
-                    destination += Vector3Int.left;
-                    break;
+    protected virtual void UpdateDead()
+    {
 
-                case MoveDir.Right:
-                    destination += Vector3Int.right;
-                    break;
-            }
-
-            State = CreatureState.Moving;
-
-            if (Managers.Map.CanMove(destination))
-            {
-                if (Managers.Object.Find(destination) == null)
-                {
-                    CellPosition = destination;
-                }
-            }
-        }
     }
 }

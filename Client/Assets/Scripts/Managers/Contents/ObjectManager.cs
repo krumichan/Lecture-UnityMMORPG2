@@ -17,7 +17,7 @@ public class ObjectManager
         _objects.Remove(go);
     }
 
-    public GameObject Find(Vector3Int cellPosition)
+    public GameObject FindCreature(Vector3Int cellPosition)
     {
         foreach (GameObject obj in _objects)
         {
