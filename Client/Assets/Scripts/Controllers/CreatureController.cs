@@ -13,7 +13,7 @@ public class CreatureController : MonoBehaviour
     protected SpriteRenderer _sprite;
 
     protected CreatureState _state = CreatureState.Idle;
-    public CreatureState State
+    public virtual CreatureState State
     {
         get { return _state; }
         set
@@ -197,38 +197,7 @@ public class CreatureController : MonoBehaviour
 
     protected virtual void UpdateIdle()
     {
-        if (_dir != MoveDir.None)
-        {
-            Vector3Int destination = CellPosition;
-            switch (_dir)
-            {
-                case MoveDir.Up:
-                    destination += Vector3Int.up;
-                    break;
 
-                case MoveDir.Down:
-                    destination += Vector3Int.down;
-                    break;
-
-                case MoveDir.Left:
-                    destination += Vector3Int.left;
-                    break;
-
-                case MoveDir.Right:
-                    destination += Vector3Int.right;
-                    break;
-            }
-
-            State = CreatureState.Moving;
-
-            if (Managers.Map.CanMove(destination))
-            {
-                if (Managers.Object.FindCreature(destination) == null)
-                {
-                    CellPosition = destination;
-                }
-            }
-        }
     }
 
     protected virtual void UpdateMoving()
@@ -241,24 +210,49 @@ public class CreatureController : MonoBehaviour
         if (dist < _speed * Time.deltaTime)
         {
             transform.position = destWorldPos;
-
-            // 예외적으로 Animation을 직접 Control.
-            // 이유 : 이동 시, Idle -> Moving(목표위치로) -> Idle(목표위치도착) -> Moving(목표위치로) -> Idle(목표위치도착) ...
-            // 위와 같이 되어, Moving Animation이 약간 끊기는 현상이 발생.
-            _state = CreatureState.Idle;
-
-            // 진짜로 멈추었을 경우, Idle로 설정.
-            // 위의 _state = CreatureState.Idle; 만 수행할 경우,
-            // Moving -> Idle이 되었을 시, Animation이 Update 되지 않음.
-            if (_dir == MoveDir.None)
-            {
-                UpdateAnimation();
-            }
+            MoveToNextPosition();
         }
         else
         {
             transform.position += moveDir.normalized * _speed * Time.deltaTime;
             State = CreatureState.Moving;
+        }
+    }
+
+    protected virtual void MoveToNextPosition()
+    {
+        if (_dir == MoveDir.None)
+        {
+            State = CreatureState.Idle;
+            return;
+        }
+
+        Vector3Int destination = CellPosition;
+        switch (_dir)
+        {
+            case MoveDir.Up:
+                destination += Vector3Int.up;
+                break;
+
+            case MoveDir.Down:
+                destination += Vector3Int.down;
+                break;
+
+            case MoveDir.Left:
+                destination += Vector3Int.left;
+                break;
+
+            case MoveDir.Right:
+                destination += Vector3Int.right;
+                break;
+        }
+
+        if (Managers.Map.CanMove(destination))
+        {
+            if (Managers.Object.FindCreature(destination) == null)
+            {
+                CellPosition = destination;
+            }
         }
     }
 

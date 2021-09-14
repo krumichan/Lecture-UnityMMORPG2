@@ -26,6 +26,9 @@ public class ArrowController : CreatureController
                 break;
         }
 
+        State = CreatureState.Moving;
+        _speed = 15.0f;
+
         base.Init();
     }
 
@@ -34,56 +37,52 @@ public class ArrowController : CreatureController
         // Animation 필요 없음.
     }
 
-    protected override void UpdateIdle()
+    protected override void MoveToNextPosition()
     {
-        if (_dir != MoveDir.None)
+
+        Vector3Int destination = CellPosition;
+        switch (_dir)
         {
-            Vector3Int destination = CellPosition;
-            switch (_dir)
+            case MoveDir.Up:
+                destination += Vector3Int.up;
+                break;
+
+            case MoveDir.Down:
+                destination += Vector3Int.down;
+                break;
+
+            case MoveDir.Left:
+                destination += Vector3Int.left;
+                break;
+
+            case MoveDir.Right:
+                destination += Vector3Int.right;
+                break;
+        }
+
+        if (Managers.Map.CanMove(destination))
+        {
+            GameObject maybeCreature = Managers.Object.FindCreature(destination);
+            if (maybeCreature == null)
             {
-                case MoveDir.Up:
-                    destination += Vector3Int.up;
-                    break;
-
-                case MoveDir.Down:
-                    destination += Vector3Int.down;
-                    break;
-
-                case MoveDir.Left:
-                    destination += Vector3Int.left;
-                    break;
-
-                case MoveDir.Right:
-                    destination += Vector3Int.right;
-                    break;
-            }
-
-            State = CreatureState.Moving;
-
-            if (Managers.Map.CanMove(destination))
-            {
-                GameObject maybeCreature = Managers.Object.FindCreature(destination);
-                if (maybeCreature == null)
-                {
-                    CellPosition = destination;
-                }
-                else
-                {
-                    //TEMP
-                    CreatureController creatureController = maybeCreature.GetComponent<CreatureController>();
-                    if (creatureController != null)
-                    {
-                        creatureController.OnDamaged();
-                    }
-
-                    Managers.Resource.Destroy(gameObject);
-
-                }
+                CellPosition = destination;
             }
             else
             {
+                //TEMP
+                CreatureController creatureController = maybeCreature.GetComponent<CreatureController>();
+                if (creatureController != null)
+                {
+                    creatureController.OnDamaged();
+                }
+
                 Managers.Resource.Destroy(gameObject);
+
             }
+        }
+        else
+        {
+            Managers.Resource.Destroy(gameObject);
         }
     }
 }
