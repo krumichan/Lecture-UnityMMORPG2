@@ -69,7 +69,13 @@ public class ArrowController : CreatureController
                 }
                 else
                 {
-                    Debug.Log(maybeCreature.name);
+                    //TEMP
+                    CreatureController creatureController = maybeCreature.GetComponent<CreatureController>();
+                    if (creatureController != null)
+                    {
+                        creatureController.OnDamaged();
+                    }
+
                     Managers.Resource.Destroy(gameObject);
 
                 }
