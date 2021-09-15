@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Scenes\BaseScene.cs" />
     <Compile Include="Assets\Scripts\Utils\Extension.cs" />
     <Compile Include="Assets\Scripts\Managers\Contents\MapManager.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ArrowController.cs" />
     <Compile Include="Assets\Scripts\Data\Data.Contents.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\UIManager.cs" />
     <Compile Include="Assets\Scripts\UI\Popup\UI_Popup.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Assets\Scripts\Managers\Managers.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\MonsterController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\ArrowController.cs" />
+    <Compile Include="Assets\Scripts\Utils\PriorityQueue.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Resources\Map\Map_001.txt" />
