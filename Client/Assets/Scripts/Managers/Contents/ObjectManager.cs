@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,19 @@ public class ObjectManager
             }
 
             if (controller.CellPosition == cellPosition)
+            {
+                return obj;
+            }
+        }
+
+        return null;
+    }
+
+    public GameObject FindCreature(Func<GameObject, bool> condition)
+    {
+        foreach (GameObject obj in _objects)
+        {
+            if (condition.Invoke(obj))
             {
                 return obj;
             }

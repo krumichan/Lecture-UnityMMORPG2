@@ -6,7 +6,16 @@ using static Define;
 public class MonsterController : CreatureController
 {
     Coroutine _coPatrol;
+    Coroutine _coSearch;
+
+    [SerializeField]
     Vector3Int _destination;
+
+    [SerializeField]
+    GameObject _target;
+
+    [SerializeField]
+    float _searchRange = 5.0f;
 
     public override CreatureState State
     {
@@ -24,6 +33,12 @@ public class MonsterController : CreatureController
                 StopCoroutine(_coPatrol);
                 _coPatrol = null;
             }
+
+            if (_coSearch != null)
+            {
+                StopCoroutine(_coSearch);
+                _coSearch = null;
+            }
         }
     }
 
@@ -35,6 +50,8 @@ public class MonsterController : CreatureController
         // 준비해야 하므로, Init() 뒤에 수행.
         State = CreatureState.Idle;
         Dir = MoveDir.None;
+
+        _speed = 3.0f;
     }
 
     protected override void UpdateIdle()
@@ -45,12 +62,37 @@ public class MonsterController : CreatureController
         {
             _coPatrol = StartCoroutine("CoPatrol");
         }
+
+        if (_coSearch == null)
+        {
+            _coSearch = StartCoroutine("CoSearch");
+        }
     }
 
     protected override void MoveToNextPosition()
     {
-        // TODO: Astar
-        Vector3Int moveCellDirection = _destination - CellPosition;
+        Vector3Int destination = _destination;
+        if (_target != null)
+        {
+            destination = _target.GetComponent<CreatureController>().CellPosition;
+        }
+
+        // target이 움직일수도 있기 때문에,
+        // Frame마다 연산한다.
+        List<Vector3Int> path = Managers.Map.FindPath(CellPosition, destination, ignoreDestinationCollision: true);
+
+        // 찾지 못했거나, 너무 먼 경우.
+        if (path.Count < 2 || (_target != null && path.Count > 10))
+        {
+            _target = null;
+            State = CreatureState.Idle;
+            return;
+        }
+
+        // path[0] : 현재 위치.
+        Vector3Int nextPosition = path[1];
+        Vector3Int moveCellDirection = nextPosition - CellPosition;
+
         if (moveCellDirection.x > 0)
         {
             Dir = MoveDir.Right;
@@ -72,29 +114,9 @@ public class MonsterController : CreatureController
             Dir = MoveDir.None;
         }
 
-        Vector3Int destination = CellPosition;
-        switch (_dir)
+        if (Managers.Map.CanMove(nextPosition) && Managers.Object.FindCreature(nextPosition) == null)
         {
-            case MoveDir.Up:
-                destination += Vector3Int.up;
-                break;
-
-            case MoveDir.Down:
-                destination += Vector3Int.down;
-                break;
-
-            case MoveDir.Left:
-                destination += Vector3Int.left;
-                break;
-
-            case MoveDir.Right:
-                destination += Vector3Int.right;
-                break;
-        }
-
-        if (Managers.Map.CanMove(destination) && Managers.Object.FindCreature(destination) == null)
-        {
-            CellPosition = destination;
+            CellPosition = nextPosition;
         }
         else
         {
@@ -133,5 +155,35 @@ public class MonsterController : CreatureController
         }
 
         State = CreatureState.Idle;
+    }
+
+    IEnumerator CoSearch()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+
+            if (_target != null)
+            {
+                continue;
+            }
+
+            _target = Managers.Object.FindCreature((go) =>
+            {
+                PlayerController pc = go.GetComponent<PlayerController>();
+                if (pc == null)
+                {
+                    return false;
+                }
+
+                Vector3Int direction = (pc.CellPosition - CellPosition);
+                if (direction.magnitude > _searchRange)
+                {
+                    return false;
+                }
+
+                return true;
+            });
+        }
     }
 }
