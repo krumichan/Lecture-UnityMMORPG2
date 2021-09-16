@@ -5,6 +5,7 @@ using static Define;
 
 public class MonsterController : CreatureController
 {
+    Coroutine _coSkill;
     Coroutine _coPatrol;
     Coroutine _coSearch;
 
@@ -15,7 +16,13 @@ public class MonsterController : CreatureController
     GameObject _target;
 
     [SerializeField]
-    float _searchRange = 5.0f;
+    float _searchRange = 10.0f;
+
+    [SerializeField]
+    float _skillRange = 1.0f;
+
+    [SerializeField]
+    bool _rangedSkill = false;
 
     public override CreatureState State
     {
@@ -52,6 +59,17 @@ public class MonsterController : CreatureController
         Dir = MoveDir.None;
 
         _speed = 3.0f;
+
+        _rangedSkill = (Random.Range(0, 2) == 0 ? true : false);
+
+        if (_rangedSkill)
+        {
+            _skillRange = 10.0f;
+        }
+        else
+        {
+            _skillRange = 1.0f;
+        }
     }
 
     protected override void UpdateIdle()
@@ -75,6 +93,24 @@ public class MonsterController : CreatureController
         if (_target != null)
         {
             destination = _target.GetComponent<CreatureController>().CellPosition;
+
+            Vector3Int direction = destination - CellPosition;
+            if (direction.magnitude <= _skillRange && (direction.x == 0 || direction.y == 0))
+            {
+                Dir = GetDirectionFromVector(direction);
+                State = CreatureState.Skill;
+
+                if (_rangedSkill)
+                {
+                    _coSkill = StartCoroutine("CoStartShootArrow");
+                }
+                else
+                {
+                    _coSkill = StartCoroutine("CoStartPunch");
+                }
+                
+                return;
+            }
         }
 
         // target이 움직일수도 있기 때문에,
@@ -82,7 +118,7 @@ public class MonsterController : CreatureController
         List<Vector3Int> path = Managers.Map.FindPath(CellPosition, destination, ignoreDestinationCollision: true);
 
         // 찾지 못했거나, 너무 먼 경우.
-        if (path.Count < 2 || (_target != null && path.Count > 10))
+        if (path.Count < 2 || (_target != null && path.Count > 20))
         {
             _target = null;
             State = CreatureState.Idle;
@@ -93,26 +129,7 @@ public class MonsterController : CreatureController
         Vector3Int nextPosition = path[1];
         Vector3Int moveCellDirection = nextPosition - CellPosition;
 
-        if (moveCellDirection.x > 0)
-        {
-            Dir = MoveDir.Right;
-        }
-        else if (moveCellDirection.x < 0)
-        {
-            Dir = MoveDir.Left;
-        }
-        else if (moveCellDirection.y > 0)
-        {
-            Dir = MoveDir.Up;
-        }
-        else if (moveCellDirection.y < 0)
-        {
-            Dir = MoveDir.Down;
-        }
-        else
-        {
-            Dir = MoveDir.None;
-        }
+        Dir = GetDirectionFromVector(moveCellDirection);
 
         if (Managers.Map.CanMove(nextPosition) && Managers.Object.FindCreature(nextPosition) == null)
         {
@@ -185,5 +202,37 @@ public class MonsterController : CreatureController
                 return true;
             });
         }
+    }
+
+    IEnumerator CoStartPunch()
+    {
+        // 피격 판정.
+        GameObject go = Managers.Object.FindCreature(base.GetFrontCellPosition());
+        if (go != null)
+        {
+            CreatureController creature = go.GetComponent<CreatureController>();
+            if (creature != null)
+            {
+                creature.OnDamaged();
+            }
+        }
+
+        // 대기 시간.
+        yield return new WaitForSeconds(0.5f);
+        State = CreatureState.Moving;
+        _coSkill = null;
+    }
+
+    IEnumerator CoStartShootArrow()
+    {
+        GameObject arrow = Managers.Resource.Instantiate("Creature/Arrow");
+        ArrowController aController = arrow.GetComponent<ArrowController>();
+        aController.Dir = _lastDir;
+        aController.CellPosition = CellPosition;
+
+        // 대기 시간.
+        yield return new WaitForSeconds(0.3f);
+        State = CreatureState.Moving;
+        _coSkill = null;
     }
 }

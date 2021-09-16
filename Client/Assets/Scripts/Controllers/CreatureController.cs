@@ -54,6 +54,30 @@ public class CreatureController : MonoBehaviour
         }
     }
 
+    public MoveDir GetDirectionFromVector(Vector3Int direction)
+    {
+        if (direction.x > 0)
+        {
+            return MoveDir.Right;
+        }
+        else if (direction.x < 0)
+        {
+            return MoveDir.Left;
+        }
+        else if (direction.y > 0)
+        {
+            return MoveDir.Up;
+        }
+        else if (direction.y < 0)
+        {
+            return MoveDir.Down;
+        }
+        else
+        {
+            return MoveDir.None;
+        }
+    }
+
     public Vector3Int GetFrontCellPosition()
     {
         Vector3Int cellPosition = CellPosition;
