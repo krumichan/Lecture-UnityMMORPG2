@@ -10,9 +10,11 @@ public class Managers : MonoBehaviour
     #region Contents
     MapManager _map = new MapManager();
     ObjectManager _object = new ObjectManager();
+    NetworkManager _network = new NetworkManager();
 
     public static MapManager Map { get { return Instance._map; } }
     public static ObjectManager Object { get { return Instance._object; } }
+    public static NetworkManager Network { get { return Instance._network; } }
 	#endregion
 
 	#region Core
@@ -38,7 +40,7 @@ public class Managers : MonoBehaviour
 
     void Update()
     {
-
+        _network.Update();
     }
 
     static void Init()
@@ -55,6 +57,7 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
 
+            s_instance._network.Init();
             s_instance._data.Init();
             s_instance._pool.Init();
             s_instance._sound.Init();

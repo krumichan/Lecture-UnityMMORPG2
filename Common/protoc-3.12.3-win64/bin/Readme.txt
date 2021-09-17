@@ -1,0 +1,1 @@
+GenPackets.bat을 실행하여 .cs 파일 생성.

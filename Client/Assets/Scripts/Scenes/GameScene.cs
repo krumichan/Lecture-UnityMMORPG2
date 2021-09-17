@@ -12,7 +12,7 @@ public class GameScene : BaseScene
 
         Managers.Map.LoadMap(1);
 
-        GameObject player = Managers.Resource.Instantiate("Creature/Player");
+        /*GameObject player = Managers.Resource.Instantiate("Creature/Player");
         player.name = "Player";
         Managers.Object.Add(player);
 
@@ -31,7 +31,8 @@ public class GameScene : BaseScene
             mController.CellPosition = position;
 
             Managers.Object.Add(monster);
-        }
+        }*/
+
         //Managers.UI.ShowSceneUI<UI_Inven>();
         //Dictionary<int, Data.Stat> dict = Managers.Data.StatDict;
         //gameObject.GetOrAddComponent<CursorController>();
