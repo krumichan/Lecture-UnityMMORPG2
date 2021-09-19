@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\MapEditor.cs" />
+    <Compile Include="Assets\Editor\MultiplayersBuildAndRun.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
