@@ -2,13 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ArrowController
+    - GameScene
     - MonsterController
     - PlayerController
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -26,8 +26,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -42,7 +40,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -74,13 +72,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1444}
     - Class: 114
+      Script: {instanceID: 2248}
+    - Class: 114
       Script: {instanceID: 2618}
     - Class: 114
       Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3540}
+      Script: {instanceID: 3542}
     - Class: 114
-      Script: {instanceID: 5068}
+      Script: {instanceID: 5070}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -676,5 +676,5 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Game.unity
   playerPath: C:/developer/unityws/lecture/unity/Lecture-UnityMMORPG2/Client/Builds/Win64/Assets2/Assets2.exe
