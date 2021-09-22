@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - ArrowController
     - GameScene
     - MonsterController
+    - MyPlayerController
     - PlayerController
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -81,6 +82,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3542}
     - Class: 114
       Script: {instanceID: 5070}
+    - Class: 114
+      Script: {instanceID: 17088}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -674,6 +677,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 90ab71dbad8d042002869776d5491f6c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MyPlayerController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity
