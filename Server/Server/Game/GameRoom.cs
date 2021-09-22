@@ -83,7 +83,7 @@ namespace Server.Game
                     {
                         if (player != p)
                         {
-                            player.Session.Send(despawnPacket);
+                            p.Session.Send(despawnPacket);
                         }
                     }
                 }
