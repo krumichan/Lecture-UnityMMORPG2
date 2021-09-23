@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Utils\Util.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\SceneManagerEx.cs" />
     <Compile Include="Assets\Scripts\UI\Scene\UI_Scene.cs" />
+    <Compile Include="Assets\Scripts\Controllers\MyPlayerController.cs" />
     <Compile Include="Assets\Scripts\Scenes\BaseScene.cs" />
     <Compile Include="Assets\Scripts\Packet\PacketHandler.cs" />
     <Compile Include="Assets\Scripts\Packet\PacketQueue.cs" />
@@ -90,7 +91,6 @@
     <Compile Include="Assets\Scripts\Managers\Managers.cs" />
     <Compile Include="Assets\Scripts\Managers\Core\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\MonsterController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\MyPlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Libs\Google.Protobuf.dll" />

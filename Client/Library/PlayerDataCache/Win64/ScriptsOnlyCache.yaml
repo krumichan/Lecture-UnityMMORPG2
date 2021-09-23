@@ -75,15 +75,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2540}
     - Class: 114
-      Script: {instanceID: 2974}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 3542}
+      Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 5070}
+      Script: {instanceID: 3544}
     - Class: 114
-      Script: {instanceID: 17088}
+      Script: {instanceID: 5072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -259,6 +259,12 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 3cf156985df62fac63708d6bed3583bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MyPlayerController
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -337,7 +343,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 90ab71dbad8d042002869776d5491f6c
+      Hash: 3cf156985df62fac63708d6bed3583bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ArrowController
@@ -439,13 +445,13 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 90ab71dbad8d042002869776d5491f6c
+      Hash: 3cf156985df62fac63708d6bed3583bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatureController
   - hash:
       serializedVersion: 2
-      Hash: 90ab71dbad8d042002869776d5491f6c
+      Hash: 3cf156985df62fac63708d6bed3583bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -667,7 +673,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 4151034a4cb9d44ecda75c6db78a6256
+      Hash: 9c8ad216cd68b03f24e7d82e99f5aae0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MonsterController
@@ -677,12 +683,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 90ab71dbad8d042002869776d5491f6c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MyPlayerController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Game.unity
