@@ -1,3 +1,4 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class PlayerController : CreatureController
 
     protected override void UpdateAnimation()
     {
-        if (_state == CreatureState.Idle)
+        if (PositionInfo.State == CreatureState.Idle)
         {
             switch (_lastDir)
             {
@@ -37,9 +38,9 @@ public class PlayerController : CreatureController
                     break;
             }
         }
-        else if (_state == CreatureState.Moving)
+        else if (PositionInfo.State == CreatureState.Moving)
         {
-            switch (_dir)
+            switch (Dir)
             {
                 case MoveDir.Up:
                     PlayWithFlip("WALK_BACK");
@@ -58,7 +59,7 @@ public class PlayerController : CreatureController
                     break;
             }
         }
-        else if (_state == CreatureState.Skill)
+        else if (PositionInfo.State == CreatureState.Skill)
         {
             switch (_lastDir)
             {

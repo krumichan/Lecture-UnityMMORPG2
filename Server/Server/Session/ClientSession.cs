@@ -41,13 +41,15 @@ namespace Server
 		public override void OnConnected(EndPoint endPoint)
 		{
 			Console.WriteLine($"OnConnected : {endPoint}");
-			
+
 			// PROTO
 			MyPlayer = PlayerManager.Instance.Add();
             {
 				MyPlayer.Info.Name = $"Player_{MyPlayer.Info.PlayerId}";
-				MyPlayer.Info.PosX = 0;
-				MyPlayer.Info.PosY = 0;
+				MyPlayer.Info.PositionInfo.State = CreatureState.Idle;
+				MyPlayer.Info.PositionInfo.MoveDir = MoveDir.None;
+				MyPlayer.Info.PositionInfo.PosX = 0;
+				MyPlayer.Info.PositionInfo.PosY = 0;
 				MyPlayer.Session = this;
 			}
 
@@ -56,7 +58,7 @@ namespace Server
 
 		public override void OnRecvPacket(ArraySegment<byte> buffer)
 		{
-			//PacketManager.Instance.OnRecvPacket(this, buffer);
+			PacketManager.Instance.OnRecvPacket(this, buffer);
 		}
 
 		public override void OnDisconnected(EndPoint endPoint)

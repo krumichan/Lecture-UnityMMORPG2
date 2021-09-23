@@ -1,3 +1,4 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,6 +71,59 @@ public class MyPlayerController : PlayerController
             State = CreatureState.Skill;
             //_coSkill = StartCoroutine("CoStartPunch");
             _coSkill = StartCoroutine("CoStartShootArrow");
+        }
+    }
+
+    protected override void MoveToNextPosition()
+    {
+        if (Dir == MoveDir.None)
+        {
+            State = CreatureState.Idle;
+            CheckUpdatedFlag();
+
+            return;
+        }
+
+        Vector3Int destination = CellPosition;
+        switch (Dir)
+        {
+            case MoveDir.Up:
+                destination += Vector3Int.up;
+                break;
+
+            case MoveDir.Down:
+                destination += Vector3Int.down;
+                break;
+
+            case MoveDir.Left:
+                destination += Vector3Int.left;
+                break;
+
+            case MoveDir.Right:
+                destination += Vector3Int.right;
+                break;
+        }
+
+        if (Managers.Map.CanMove(destination))
+        {
+            if (Managers.Object.FindCreature(destination) == null)
+            {
+                CellPosition = destination;
+            }
+        }
+
+        CheckUpdatedFlag();
+    }
+
+    void CheckUpdatedFlag()
+    {
+        if (_updated)
+        {
+            C_Move movePacket = new C_Move();
+            movePacket.PositionInfo = PositionInfo;
+            Managers.Network.Send(movePacket);
+
+            _updated = false;
         }
     }
 }

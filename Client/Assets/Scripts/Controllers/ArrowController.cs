@@ -1,3 +1,4 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +42,7 @@ public class ArrowController : CreatureController
     {
 
         Vector3Int destination = CellPosition;
-        switch (_dir)
+        switch (Dir)
         {
             case MoveDir.Up:
                 destination += Vector3Int.up;
@@ -69,7 +70,6 @@ public class ArrowController : CreatureController
             }
             else
             {
-                //TEMP
                 CreatureController creatureController = maybeCreature.GetComponent<CreatureController>();
                 if (creatureController != null)
                 {
