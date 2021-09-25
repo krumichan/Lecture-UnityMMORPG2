@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf;
 using Google.Protobuf.Protocol;
 using Server;
+using Server.Game;
 using ServerCore;
 using System;
 using System.Collections.Generic;
@@ -15,27 +16,21 @@ class PacketHandler
 
         Console.WriteLine($"C_Move ({movePacket.PositionInfo.PosX}, {movePacket.PositionInfo.PosY})");
 
-		if (clientSession.MyPlayer == null)
+		// MyPlayer를 null 체크 했을 때,
+		// null이 아니었으나, 다음 Check 시, 다른 thread가 null로 바꾸어놔서
+		// crash가 날수도 있기 때문.
+		Player multiThreadSafetyPlayer = clientSession.MyPlayer;
+		if (multiThreadSafetyPlayer == null)
         {
 			return;
         }
 
-		if (clientSession.MyPlayer.Room == null)
+        GameRoom multiThreadSafetyRoom = multiThreadSafetyPlayer.Room;
+        if (multiThreadSafetyRoom == null)
         {
 			return;
         }
 
-		// TODO: 검증
-
-		// Server 측에서 좌표 이동.
-		PlayerInfo info = clientSession.MyPlayer.Info;
-		info.PositionInfo = movePacket.PositionInfo;
-
-		// 타 Player에게 전송.
-		S_Move responseMovePacket = new S_Move();
-		responseMovePacket.PlayerId = clientSession.MyPlayer.Info.PlayerId;
-		responseMovePacket.PositionInfo = movePacket.PositionInfo;
-
-		clientSession.MyPlayer.Room.Broadcast(responseMovePacket);
+		multiThreadSafetyRoom.HandleMove(multiThreadSafetyPlayer, movePacket);
 	}
 }

@@ -90,6 +90,31 @@ namespace Server.Game
                 }
             }
         }
+
+        public void HandleMove(Player player, C_Move movePacket)
+        {
+            if (player == null)
+            {
+                return;
+            }
+
+            lock (_lock)
+            {
+                // TODO: 검증
+
+                // Server 측에서 좌표 이동.
+                PlayerInfo info = player.Info;
+                info.PositionInfo = movePacket.PositionInfo;
+
+                // 타 Player에게 전송.
+                S_Move responseMovePacket = new S_Move();
+                responseMovePacket.PlayerId = player.Info.PlayerId;
+                responseMovePacket.PositionInfo = movePacket.PositionInfo;
+
+                Broadcast(responseMovePacket);
+            }
+        }
+
         public void Broadcast(IMessage packet)
         {
             lock (_lock)
