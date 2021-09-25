@@ -33,4 +33,24 @@ class PacketHandler
 
 		multiThreadSafetyRoom.HandleMove(multiThreadSafetyPlayer, movePacket);
 	}
+
+	public static void C_SkillHandler(PacketSession session, IMessage packet)
+    {
+		C_Skill skillPacket = packet as C_Skill;
+		ClientSession clientSession = session as ClientSession;
+
+		Player multiThreadSafetyPlayer = clientSession.MyPlayer;
+		if (multiThreadSafetyPlayer == null)
+		{
+			return;
+		}
+
+		GameRoom multiThreadSafetyRoom = multiThreadSafetyPlayer.Room;
+		if (multiThreadSafetyRoom == null)
+		{
+			return;
+		}
+
+		multiThreadSafetyRoom.HandleSkill(multiThreadSafetyPlayer, skillPacket);
+	}
 }

@@ -101,20 +101,38 @@ public class PlayerController : CreatureController
         }
     }
 
+    public void UseSkill(int skillId)
+    {
+        switch (skillId)
+        {
+            case 1:
+                _coSkill = StartCoroutine("CoStartPunch");
+                break;
+        }
+    }
+
+    protected virtual void CheckUpdatedFlag()
+    {
+
+    }
+
     IEnumerator CoStartPunch()
     {
-        // 피격 판정.
-        GameObject go = Managers.Object.FindCreature(base.GetFrontCellPosition());
-        if (go != null)
-        {
-            Debug.Log(go.name);
-        }
-
         // 대기 시간.
         _rangeSkill = false;
+
+        State = CreatureState.Skill;
+
+        // Client 측에도 Delay를 넣어주는 이유.
+        // Server 측에서 Delay를 생각하여 Filtering 하긴 하지만,
+        // Client 측에서 Skill 연타로 인해 무수한 수의 무의미한
+        // Request Packet을 Server 측에 보내는 것을 방지하기 위함이다.
         yield return new WaitForSeconds(0.5f);
+
         State = CreatureState.Idle;
         _coSkill = null;
+
+        CheckUpdatedFlag();
     }
 
     IEnumerator CoStartShootArrow()

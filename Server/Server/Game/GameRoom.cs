@@ -115,6 +115,36 @@ namespace Server.Game
             }
         }
 
+        public void HandleSkill(Player player, C_Skill skillPacket)
+        {
+            if (player == null)
+            {
+                return;
+            }
+
+            lock (_lock)
+            {
+                PlayerInfo info = player.Info;
+                if (info.PositionInfo.State != CreatureState.Idle)
+                {
+                    return;
+                }
+
+                // TODO: Skill 사용 가능 여부 체크.
+
+                // 통과.
+                info.PositionInfo.State = CreatureState.Skill;
+
+                S_Skill skill = new S_Skill() { SkillInfo = new SkillInfo() };
+                skill.PlayerId = info.PlayerId;
+                skill.SkillInfo.SkillId = 1;
+
+                Broadcast(skill);
+
+                // TODO: Damage 판정.
+            }
+        }
+
         public void Broadcast(IMessage packet)
         {
             lock (_lock)
