@@ -16,9 +16,14 @@ public class PlayerController : CreatureController
 
     protected override void UpdateAnimation()
     {
+        if (_animator == null || _sprite == null)
+        {
+            return;
+        }
+
         if (PositionInfo.State == CreatureState.Idle)
         {
-            switch (_lastDir)
+            switch (Dir)
             {
                 case MoveDir.Up:
                     PlayWithFlip("IDLE_BACK");
@@ -61,7 +66,7 @@ public class PlayerController : CreatureController
         }
         else if (PositionInfo.State == CreatureState.Skill)
         {
-            switch (_lastDir)
+            switch (Dir)
             {
                 case MoveDir.Up:
                     PlayWithFlip(_rangeSkill ? "ATTACK_WEAPON_BACK" : "ATTACK_BACK");
@@ -89,16 +94,6 @@ public class PlayerController : CreatureController
     protected override void UpdateController()
     {
         base.UpdateController();
-    }
-
-    protected override void UpdateIdle()
-    {
-        // Moving State로 전이할 것인가를 결정.
-        if (Dir != MoveDir.None)
-        {
-            State = CreatureState.Moving;
-            return;
-        }
     }
 
     public void UseSkill(int skillId)
@@ -139,7 +134,7 @@ public class PlayerController : CreatureController
     {
         GameObject arrow = Managers.Resource.Instantiate("Creature/Arrow");
         ArrowController aController = arrow.GetComponent<ArrowController>();
-        aController.Dir = _lastDir;
+        aController.Dir = Dir;
         aController.CellPosition = CellPosition;
 
         // 대기 시간.

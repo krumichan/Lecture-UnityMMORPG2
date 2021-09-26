@@ -57,7 +57,7 @@ public class MonsterController : CreatureController
         // Animator, SpriteRenderer를
         // 준비해야 하므로, Init() 뒤에 수행.
         State = CreatureState.Idle;
-        Dir = MoveDir.None;
+        Dir = MoveDir.Down;
 
         _speed = 3.0f;
 
@@ -228,7 +228,7 @@ public class MonsterController : CreatureController
     {
         GameObject arrow = Managers.Resource.Instantiate("Creature/Arrow");
         ArrowController aController = arrow.GetComponent<ArrowController>();
-        aController.Dir = _lastDir;
+        aController.Dir = Dir;
         aController.CellPosition = CellPosition;
 
         // 대기 시간.

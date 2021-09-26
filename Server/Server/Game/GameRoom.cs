@@ -11,7 +11,14 @@ namespace Server.Game
         object _lock = new object();
         public int RoomId { get; set; }
 
-        List<Player> _players = new List<Player>();
+        Dictionary<int, Player> _players = new Dictionary<int, Player>();
+
+        Map _map = new Map();
+
+        public void Init(int mapId)
+        {
+            _map.LoadMap(mapId);
+        }
 
         public void EnterGame(Player newPlayer)
         {
@@ -22,7 +29,7 @@ namespace Server.Game
 
             lock (_lock)
             {
-                _players.Add(newPlayer);
+                _players.Add(newPlayer.Info.PlayerId, newPlayer);
                 newPlayer.Room = this;
 
                 // 본인에게 전송.
@@ -32,7 +39,7 @@ namespace Server.Game
                     newPlayer.Session.Send(enterPacket);
 
                     S_Spawn spawnPacket = new S_Spawn();
-                    foreach (Player p in _players)
+                    foreach (Player p in _players.Values)
                     {
                         if (newPlayer != p)
                         {
@@ -46,7 +53,7 @@ namespace Server.Game
                 {
                     S_Spawn spawnPacket = new S_Spawn();
                     spawnPacket.Players.Add(newPlayer.Info);
-                    foreach (Player p in _players)
+                    foreach (Player p in _players.Values)
                     {
                         if (newPlayer != p)
                         {
@@ -61,13 +68,12 @@ namespace Server.Game
         {
             lock (_lock)
             {
-                Player player = _players.Find(p => p.Info.PlayerId == playerId);
-                if (player == null)
+                Player player = null;
+                if (_players.Remove(playerId, out player))
                 {
                     return;
                 }
 
-                _players.Remove(player);
                 player.Room = null;
 
                 // 본인에게 전송.
@@ -80,7 +86,7 @@ namespace Server.Game
                 {
                     S_Despawn despawnPacket = new S_Despawn();
                     despawnPacket.PlayerIds.Add(player.Info.PlayerId);
-                    foreach (Player p in _players)
+                    foreach (Player p in _players.Values)
                     {
                         if (player != p)
                         {
@@ -101,10 +107,21 @@ namespace Server.Game
             lock (_lock)
             {
                 // TODO: 검증
-
-                // Server 측에서 좌표 이동.
+                PositionInfo movePositionInfo = movePacket.PositionInfo;
                 PlayerInfo info = player.Info;
-                info.PositionInfo = movePacket.PositionInfo;
+
+                // 다른 좌표로 이동할 경우, 갈 수 있는지 검증.
+                if (movePositionInfo.PosX != info.PositionInfo.PosX || movePositionInfo.PosY != info.PositionInfo.PosY)
+                {
+                    if (_map.CanMove(new Vector2Int(movePositionInfo.PosX, movePositionInfo.PosY)) == false)
+                    {
+                        return;
+                    }
+                }
+
+                info.PositionInfo.State = movePositionInfo.State;
+                info.PositionInfo.MoveDir = movePositionInfo.MoveDir;
+                _map.ApplyMove(player, new Vector2Int(movePositionInfo.PosX, movePositionInfo.PosY));
 
                 // 타 Player에게 전송.
                 S_Move responseMovePacket = new S_Move();
@@ -142,6 +159,12 @@ namespace Server.Game
                 Broadcast(skill);
 
                 // TODO: Damage 판정.
+                Vector2Int skillPosition = player.GetFrontCellPosition(info.PositionInfo.MoveDir);
+                Player target = _map.Find(skillPosition);
+                if (target != null)
+                {
+                    Console.WriteLine("Hit Player !!");
+                }
             }
         }
 
@@ -149,7 +172,7 @@ namespace Server.Game
         {
             lock (_lock)
             {
-                foreach (Player p in _players)
+                foreach (Player p in _players.Values)
                 {
                     p.Session.Send(packet);
                 }

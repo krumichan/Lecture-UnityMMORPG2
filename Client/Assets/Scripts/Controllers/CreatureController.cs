@@ -69,7 +69,6 @@ public class CreatureController : MonoBehaviour
         }
     }
 
-    protected MoveDir _lastDir = MoveDir.Down;
     public MoveDir Dir
     {
         get { return PositionInfo.MoveDir; }
@@ -81,10 +80,6 @@ public class CreatureController : MonoBehaviour
             }
 
             PositionInfo.MoveDir = value;
-            if (value != MoveDir.None)
-            {
-                _lastDir = value;
-            }
 
             UpdateAnimation();
             _updated = true;
@@ -105,13 +100,9 @@ public class CreatureController : MonoBehaviour
         {
             return MoveDir.Up;
         }
-        else if (direction.y < 0)
-        {
-            return MoveDir.Down;
-        }
         else
         {
-            return MoveDir.None;
+            return MoveDir.Down;
         }
     }
 
@@ -119,7 +110,7 @@ public class CreatureController : MonoBehaviour
     {
         Vector3Int cellPosition = CellPosition;
         
-        switch (_lastDir)
+        switch (Dir)
         {
             case MoveDir.Up:
                 cellPosition += Vector3Int.up;
@@ -145,7 +136,7 @@ public class CreatureController : MonoBehaviour
     {
         if (State == CreatureState.Idle)
         {
-            switch (_lastDir)
+            switch (Dir)
             {
                 case MoveDir.Up:
                     PlayWithFlip("IDLE_BACK");
@@ -188,7 +179,7 @@ public class CreatureController : MonoBehaviour
         }
         else if (State == CreatureState.Skill)
         {
-            switch (_lastDir)
+            switch (Dir)
             {
                 case MoveDir.Up:
                     PlayWithFlip("ATTACK_BACK");
@@ -237,7 +228,7 @@ public class CreatureController : MonoBehaviour
         transform.position = worldPos;
 
         State = CreatureState.Idle;
-        Dir = MoveDir.None;
+        Dir = MoveDir.Down;
         UpdateAnimation();
     }
 
