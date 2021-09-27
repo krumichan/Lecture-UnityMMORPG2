@@ -35,11 +35,15 @@ namespace Server
 			Console.WriteLine("Listening...");
 
 			//FlushRoom();
-			JobTimer.Instance.Push(FlushRoom);
+			//JobTimer.Instance.Push(FlushRoom);
 
+			// TODO:
 			while (true)
 			{
-				JobTimer.Instance.Flush();
+				//JobTimer.Instance.Flush();
+				RoomManager.Instance.Find(1).Update();
+
+				Thread.Sleep(100);
 			}
 		}
 	}

@@ -9,29 +9,58 @@ public class ObjectManager
     public MyPlayerController MyPlayer { get; set; }
     Dictionary<int, GameObject> _objects = new Dictionary<int, GameObject>();
 
-    public void Add(PlayerInfo info, bool myPlayer = false)
+    public static GameObjectType GetObjectTypeById(int id)
     {
-        if (myPlayer)
-        {
-            GameObject go = Managers.Resource.Instantiate("Creature/MyPlayer");
-            go.name = info.Name;
-            _objects.Add(info.PlayerId, go);
+        int type = (id >> 24) & 0x7F;
+        return (GameObjectType)type;
+    }
 
-            MyPlayer = go.GetComponent<MyPlayerController>();
-            MyPlayer.Id = info.PlayerId;
-            MyPlayer.PositionInfo = info.PositionInfo;
-            MyPlayer.SyncPosition();
-        }
-        else
+    public void Add(ObjectInfo info, bool myPlayer = false)
+    {
+        GameObjectType objectType = GetObjectTypeById(info.ObjectId);
+        
+        switch (objectType)
         {
-            GameObject go = Managers.Resource.Instantiate("Creature/Player");
-            go.name = info.Name;
-            _objects.Add(info.PlayerId, go);
+            case GameObjectType.Player:
+                if (myPlayer)
+                {
+                    GameObject go = Managers.Resource.Instantiate("Creature/MyPlayer");
+                    go.name = info.Name;
+                    _objects.Add(info.ObjectId, go);
 
-            PlayerController pc = go.GetComponent<PlayerController>();
-            pc.Id = info.PlayerId;
-            pc.PositionInfo = info.PositionInfo;
-            pc.SyncPosition();
+                    MyPlayer = go.GetComponent<MyPlayerController>();
+                    MyPlayer.Id = info.ObjectId;
+                    MyPlayer.PositionInfo = info.PositionInfo;
+                    MyPlayer.SyncPosition();
+                }
+                else
+                {
+                    GameObject go = Managers.Resource.Instantiate("Creature/Player");
+                    go.name = info.Name;
+                    _objects.Add(info.ObjectId, go);
+
+                    PlayerController pc = go.GetComponent<PlayerController>();
+                    pc.Id = info.ObjectId;
+                    pc.PositionInfo = info.PositionInfo;
+                    pc.SyncPosition();
+                }
+                break;
+
+            case GameObjectType.Monster:
+                break;
+
+            case GameObjectType.Projectile:
+                {
+                    GameObject go = Managers.Resource.Instantiate("Creature/Arrow");
+                    go.name = "Arrow";
+                    _objects.Add(info.ObjectId, go);
+
+                    ArrowController ac = go.GetComponent<ArrowController>();
+                    ac.Dir = info.PositionInfo.MoveDir;
+                    ac.CellPosition = new Vector3Int(info.PositionInfo.PosX, info.PositionInfo.PosY, 0);
+                    ac.SyncPosition();
+                }
+                break;
         }
     }
 

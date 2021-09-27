@@ -58,7 +58,7 @@ namespace Server.Game
         public int MaxY { get; set; }
 
         bool[,] _collision;
-        Player[,] _players;
+        GameObject[,] _objects;
 
         public int SizeX { get { return MaxX - MinX + 1; } }
         public int SizeY { get { return MaxY - MinY + 1; } }
@@ -78,10 +78,10 @@ namespace Server.Game
             int x = cellPosition.x - MinX;
             int y = MaxY - cellPosition.y;
 
-            return !_collision[y, x] && (!checkObjects || _players[y, x] == null);
+            return !_collision[y, x] && (!checkObjects || _objects[y, x] == null);
         }
 
-        public Player Find(Vector2Int cellPosition)
+        public GameObject Find(Vector2Int cellPosition)
         {
             if (cellPosition.x < MinX || cellPosition.x > MaxX)
             {
@@ -95,12 +95,12 @@ namespace Server.Game
 
             int x = cellPosition.x - MinX;
             int y = MaxY - cellPosition.y;
-            return _players[y, x];
+            return _objects[y, x];
         }
 
-        public bool ApplyMove(Player player, Vector2Int destination)
+        public bool ApplyLeave(GameObject gameObject)
         {
-            PositionInfo positionInfo = player.Info.PositionInfo;
+            PositionInfo positionInfo = gameObject.PosInfo;
             if (positionInfo.PosX < MinX || positionInfo.PosX > MaxX)
             {
                 return false;
@@ -111,24 +111,32 @@ namespace Server.Game
                 return false;
             }
 
+            {
+                int beforeX = positionInfo.PosX - MinX;
+                int beforeY = MaxY - positionInfo.PosY;
+                if (_objects[beforeY, beforeX] == gameObject)
+                {
+                    _objects[beforeY, beforeX] = null;
+                }
+            }
+
+            return true;
+        }
+
+        public bool ApplyMove(GameObject gameObject, Vector2Int destination)
+        {
+            ApplyLeave(gameObject);
+
+            PositionInfo positionInfo = gameObject.PosInfo;
             if (CanMove(destination, true) == false)
             {
                 return false;
             }
 
             {
-                int beforeX = positionInfo.PosX - MinX;
-                int beforeY = MaxY - positionInfo.PosY;
-                if (_players[beforeY, beforeX] == player)
-                {
-                    _players[beforeY, beforeX] = null;
-                }
-            }
-
-            {
                 int afterX = destination.x - MinX;
                 int afterY = MaxY - destination.y;
-                _players[afterY, afterX] = player;
+                _objects[afterY, afterX] = gameObject;
             }
 
             // 실제 좌표 이동.
@@ -154,7 +162,7 @@ namespace Server.Game
             int xCount = MaxX - MinX + 1;
             int yCount = MaxY - MinY + 1;
             _collision = new bool[yCount, xCount];
-            _players = new Player[yCount, xCount];
+            _objects = new GameObject[yCount, xCount];
 
             for (int y = 0; y < yCount; ++y)
             {
