@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using Google.Protobuf.Protocol;
+using Server.Data;
 using Server.Game;
 using ServerCore;
 
@@ -23,6 +24,9 @@ namespace Server
 
 		static void Main(string[] args)
 		{
+			ConfigManager.LoadConfig();
+			DataManager.LoadData();
+
 			RoomManager.Instance.Add(1);
 
 			// DNS (Domain Name System)
@@ -43,7 +47,7 @@ namespace Server
 				//JobTimer.Instance.Flush();
 				RoomManager.Instance.Find(1).Update();
 
-				Thread.Sleep(100);
+				//Thread.Sleep(100);
 			}
 		}
 	}

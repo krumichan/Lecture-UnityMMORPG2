@@ -103,6 +103,10 @@ public class PlayerController : CreatureController
             case 1:
                 _coSkill = StartCoroutine("CoStartPunch");
                 break;
+
+            case 2:
+                _coSkill = StartCoroutine("CoStartShootArrow");
+                break;
         }
     }
 
@@ -132,16 +136,17 @@ public class PlayerController : CreatureController
 
     IEnumerator CoStartShootArrow()
     {
-        GameObject arrow = Managers.Resource.Instantiate("Creature/Arrow");
-        ArrowController aController = arrow.GetComponent<ArrowController>();
-        aController.Dir = Dir;
-        aController.CellPosition = CellPosition;
-
         // 대기 시간.
         _rangeSkill = true;
+
+        State = CreatureState.Skill;
+
         yield return new WaitForSeconds(0.3f);
+        
         State = CreatureState.Idle;
-        _coSkill = null; 
+        _coSkill = null;
+
+        CheckUpdatedFlag();
     }
 
     public override void OnDamaged()
